@@ -117,7 +117,8 @@ button {
   opacity: 0.8;
 }
 
-#prompt1, #prompt2 {
+#prompt1,
+#prompt2 {
   opacity: 0;
 }
 
