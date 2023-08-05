@@ -36,7 +36,6 @@ document.getElementById('submit-button').addEventListener('click', async (e) => 
     setTimeout(() => {
       prompt1.classList.remove('fade');
     }, 4000);
-
   } else if (Number.isNaN(score)) {
     prompt2.classList.add('fade');
     setTimeout(() => {
@@ -48,7 +47,6 @@ document.getElementById('submit-button').addEventListener('click', async (e) => 
     scoreInput.value = '';
     fetchLeaderboard();
   }
-
 });
 
 // Event listener for the "Refresh" button
