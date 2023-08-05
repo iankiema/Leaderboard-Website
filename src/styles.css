@@ -12,7 +12,8 @@ body {
 
 .leaderboard-container {
   width: 70%;
-  height: auto;
+  max-height: 500px;
+  overflow-y: auto;
   display: flex;
   padding: 20px;
   border-radius: 8px;
@@ -31,24 +32,39 @@ h1 {
   width: 50%;
   height: 100%;
   flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .refresh-container {
   display: flex;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .leaderboard-table {
   width: 100%;
+  max-height: 400px;
+  table-layout: fixed;
+  overflow-y: auto;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
 .leaderboard-table th,
 .leaderboard-table td {
+  width: 100%;
   padding: 12px;
   text-align: center;
   border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-table tbody tr {
+  height: 40px;
+}
+
+.leaderboard-body td {
+  width: 300px;
 }
 
 .leaderboard-table th {
@@ -56,8 +72,17 @@ h1 {
   color: #333;
 }
 
+.rowData {
+  width: 500px;
+}
+
 .leaderboard-table td {
   color: #444;
+  padding: 8px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .input-container {
@@ -120,6 +145,8 @@ button {
 #prompt1,
 #prompt2 {
   opacity: 0;
+  color: red;
+  font-size: 14px;
 }
 
 .fade {

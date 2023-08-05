@@ -5,10 +5,13 @@ import { submitScore, fetchLeaderboardFromAPI } from './functionality.js';
 const fetchLeaderboard = async () => {
   const data = await fetchLeaderboardFromAPI();
   const leaderboardBody = document.getElementById('leaderboard-body');
-  leaderboardBody.innerHTML = ''; // Clear existing data
+
+  leaderboardBody.innerHTML = '';
 
   data.forEach((entry) => {
     const row = document.createElement('tr');
+    row.classList.add('rowData');
+
     row.innerHTML = `
           <td>${entry.user}</td>
           <td>${entry.score}</td>
@@ -33,19 +36,16 @@ document.getElementById('submit-button').addEventListener('click', async (e) => 
     setTimeout(() => {
       prompt1.classList.remove('fade');
     }, 4000);
-  } else {
-    await submitScore(name, score); // Pass the score as well to the submitScore function
-    nameInput.value = ''; // Clear the input value
-  }
-
-  if (Number.isNaN(score)) {
+  } else if (Number.isNaN(score)) {
     prompt2.classList.add('fade');
     setTimeout(() => {
       prompt2.classList.remove('fade');
     }, 4000);
   } else {
-    await submitScore(name, score); // Pass the name as well to the submitScore function
-    scoreInput.value = ''; // Clear the input value
+    await submitScore(name, score);
+    nameInput.value = '';
+    scoreInput.value = '';
+    fetchLeaderboard();
   }
 });
 
