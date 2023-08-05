@@ -145,8 +145,11 @@ button {
 #prompt1,
 #prompt2 {
   opacity: 0;
-  color: red;
+  color: white;
+  background-color: red;
   font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .fade {
