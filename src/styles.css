@@ -116,3 +116,36 @@ button {
 #refresh-button:hover {
   opacity: 0.8;
 }
+
+#prompt1,
+#prompt2 {
+  opacity: 0;
+}
+
+.fade {
+  animation: fade 3s linear;
+}
+
+@keyframes display {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
