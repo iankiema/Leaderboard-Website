@@ -5,11 +5,13 @@ import { submitScore, fetchLeaderboardFromAPI } from './functionality.js';
 const fetchLeaderboard = async () => {
   const data = await fetchLeaderboardFromAPI();
   const leaderboardBody = document.getElementById('leaderboard-body');
+
   leaderboardBody.innerHTML = '';
 
   data.forEach((entry) => {
     const row = document.createElement('tr');
     row.classList.add('rowData');
+
     row.innerHTML = `
           <td>${entry.user}</td>
           <td>${entry.score}</td>
@@ -34,6 +36,7 @@ document.getElementById('submit-button').addEventListener('click', async (e) => 
     setTimeout(() => {
       prompt1.classList.remove('fade');
     }, 4000);
+
   } else if (Number.isNaN(score)) {
     prompt2.classList.add('fade');
     setTimeout(() => {
@@ -45,10 +48,13 @@ document.getElementById('submit-button').addEventListener('click', async (e) => 
     scoreInput.value = '';
     fetchLeaderboard();
   }
+
 });
 
 // Event listener for the "Refresh" button
 document.getElementById('refresh-button').addEventListener('click', () => {
+  nameInput.innerHTML = '';
+  scoreInput.innerHTML = '';
   fetchLeaderboard();
 });
 
