@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+<script defer src="index.bundle.js"></script></head>
+<body>
+    <h1>Leaderboard</h1>
+    <div class="leaderboard-container">
+
+        <div class="table-container">
+            <div class="refresh-container">
+                <h2>Recent Scores</h2>
+                <button type="button" id="refresh-button">Refresh</button>
+            </div>
+
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                    <th>Player</th>
+                    <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Leaderboard data will be dynamically populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="input-container">
+            <h2>Add your score</h2>
+            <div class="name-container">
+                <input type="text" id="name-input" placeholder="Enter your name">
+                <p class="prompt">Please enter your name</p>
+            </div>
+            <div class="score-container">
+                <input type="number" id="score-input" placeholder="Enter your score">
+                <p class="prompt">Please enter a valid number</p>
+            </div>
+
+            <button type="button" id="submit-button">Submit</button>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
